@@ -1,135 +1,132 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+nav.navbar {
+    background: rgb(19, 4, 4);
 }
 
-nav {
+.navbar-container {
     display: flex;
-    height: 65px;
-    width: 100%;
-    background: #1b1b1b;
-    align-items: center;
+    flex-direction: row;
     justify-content: space-between;
-    padding: 10px 50px 0 100px;
-    flex-wrap: wrap;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 10px;
 }
 
-nav .logo {
-    color: #fff;
-    font-size: 35px;
-    font-weight: 600;
+.navbar-toggler {
+    padding: .25rem .25rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    color: rgba(0, 0, 0, .5);
+    border-color: rgba(0, 0, 0, .1);
 }
 
-nav ul {
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='grey' d='M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z'%3E%3C/path%3E%3C/svg%3E");
+    display: inline-block;
+    width: 1.5em;
+    height: 1.0em;
+    vertical-align: middle;
+    background-size: 100% 100%;
+}
+
+ul.links-list {
     display: flex;
-    flex-wrap: wrap;
-    list-style: none;
+    flex-direction: row;
 }
 
-nav ul li {
-    margin: 0 5px;
+li.nav-item {
+    list-style-type: none;
+    margin-left: 20px;
 }
 
-nav ul li a {
-    color: #f2f2f2;
+nav a {
     text-decoration: none;
-    font-size: 18px;
-    font-weight: 500;
-    padding: 8px 15px;
+    color: white;
+}
+
+nav a:hover {
+    border: 1px;
     border-radius: 5px;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
+    /* padding: 10px; */
+    background-color: aliceblue;
+    border-color: aliceblue;
+    text-decoration: none;
+    color: rgb(15, 14, 14);
 }
 
-nav ul li a.active, nav ul li a:hover {
-    color: #111;
-    background: #fff;
+nav a.is-active {
+    color: white;
 }
 
-nav .menu-btn i {
-    color: #fff;
-    font-size: 22px;
-    cursor: pointer;
-    display: none;
+.container {
+    width: 80%;
+    margin: 0 auto;
 }
 
-input[type="checkbox"] {
-    display: none;
+.brand-title
+{
+
+}
+.brand-title:hover {
+    border: 1px;
+    border-radius: 5px;
+    /* padding: 10px; */
+    background-color: aliceblue;
+    border-color: aliceblue;
+    text-decoration: none;
+    color: rgb(15, 14, 14);
+    padding: 10px
 }
 
-.gift-image {
-    height: 50px;
-    width: 50px;
-    margin-bottom: 10px;
-}
-
-@media (max-width: 1000px) {
-    nav {
-        padding: 0 40px 0 50px;
+@media only screen and (min-width: 992px) {
+    .navbar-toggler {
+        display: none;
     }
 }
 
-@media (max-width: 920px) {
-    nav .menu-btn i {
+@media only screen and (max-width: 992px) {
+    .navbar-toggler {
         display: block;
     }
-    #click:checked~.menu-btn i:before {
-        content: "\f00d";
-    }
-    nav ul {
-        position: fixed;
-        top: 80px;
-        left: -100%;
-        background: #111;
+    div.navbar-links {
+        margin-right: 0;
+        position: absolute;
+        width: 75%;
+        background: rgb(15, 14, 14);
+        z-index: 99;
+        margin-top: 3rem;
+        float: right;
+        right: 0;
         height: 100vh;
-        width: 100%;
-        text-align: center;
-        display: block;
-        transition: all 0.3s ease;
+        transition: all ease-in-out 0.3s;
+        align-self: flex-start;
+        border-top: 2px solid maroon;
     }
-    #click:checked~ul {
-        left: 0;
+    ul.links-list {
+        display: flex;
+        flex-direction: column;
+        padding-left: 0;
     }
-    nav ul li {
-        width: 100%;
-        margin: 40px 0;
+    .navbar-links.menu-collapse {
+        margin-right: -75%;
+        width: 0;
+        overflow: hidden;
     }
-    nav ul li a {
-        width: 100%;
-        margin-left: -100%;
-        display: block;
-        font-size: 20px;
-        transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    li.nav-item {
+        padding-left: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-left: 0;
     }
-    #click:checked~ul li a {
-        margin-left: 0px;
+    li.nav-item a.nav-link {
+        padding: 10px 20px;
     }
-    nav ul li a.active, nav ul li a:hover {
-        background: none;
-        color: cyan;
+    .menu-collapse {
+        margin-right: -75%;
+        width: 0;
+        overflow: hidden;
     }
-    .gift-image {
-        height: 40px;
-        width: 40px;
-    }
-}
-
-.content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    z-index: -1;
-    width: 100%;
-    padding: 0 30px;
-    color: #1b1b1b;
-}
-
-.content div {
-    font-size: 40px;
-    font-weight: 700;
 }
